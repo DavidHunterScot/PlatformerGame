@@ -143,13 +143,16 @@ public class GamePanel extends JPanel
 		}
 	}
 	
-	public void paintComponent( Graphics g )
+	public void updateGame()
 	{
-		super.paintComponent( g );
-		
 		updateAnimationTick();
 		setAnimation();
 		updatePos();
+	}
+	
+	public void paintComponent( Graphics g )
+	{
+		super.paintComponent( g );
 		
 		g.drawImage( animations[ playerAction ][ aniIndex ], (int) xDelta, (int) yDelta, 256, 160, null );
 	}
